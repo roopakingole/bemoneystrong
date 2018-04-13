@@ -1,0 +1,74 @@
+# Templates (relative to assets/ directory)
+template:
+    login: _login.twig
+    password: _password.twig
+    button: _button.twig
+
+label:
+    logout: Logout
+
+# Use the Zocial styling CSS for buttons
+#
+# You must also install the 'bolt/zocial-icons' extension
+zocial: false
+
+# Frontend role to assign to logged in visitor. 
+#
+# Is only relevant when 'frontend_permission_checks' is set to true in config.yml
+# and the role exists in permissions.yml
+#role: social
+
+# Enabled OpenID providers
+# Options are dependent on the values for HybridAuth
+providers:
+    Password:
+        enabled: true
+
+    Google:
+        label: Sign in with Google
+        enabled: true
+        keys:
+            id: "*** your ID here ***"
+            secret: "*** your secret here ***"
+        scope: "openid profile email"
+
+    Facebook:
+        label: Sign in with Facebook
+        enabled: false
+        keys:
+            id: "*** your ID here ***"
+            secret: "*** your secret here ***"
+        scope: "email"
+
+    Twitter:
+        label: Sign in with Twitter
+        enabled: false
+        keys:
+            key: "*** your KEY here ***"
+            secret: "*** your secret here ***"
+
+    GitHub:
+        label: Sign in with Github
+        enabled: false
+        keys:
+            id: "*** your ID here ***"
+            secret: "*** your secret here ***"
+        scope: "user:email"
+       
+    # MyOpenIdProvider:
+    #     type: OpenID
+    #     label: Sign in with MyOpenIdProvider
+    #     enabled: true
+    #     openid_identifier: "http://openid.example.org"
+        
+
+# The basepath for the extension's routes. Do not include the leading slash ('/')
+# This path determines the location used to log in or out, like '/authenticate/login'
+basepath: authenticate
+
+# Number of days to allow login sessions to be valid for
+login_expiry: 14
+
+# Enabling debug_made will make this extension write out a logfile to {BOLT_CACHE_DIR}/authenticate.log.
+# Note: This file wil get huge, quickly!
+debug_mode: false

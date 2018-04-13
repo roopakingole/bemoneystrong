@@ -1,0 +1,99 @@
+<script>
+$(document).ready(function(){
+    // Activate Carousel
+    $("#myCarousel").carousel("pause");
+
+    // Click on the button to start sliding 
+    $("#myBtn").click(function(){
+        $("#myCarousel").carousel("cycle");
+    });
+
+    // Click on the button to stop sliding 
+    $("#myBtn2").click(function(){
+        $("#myCarousel").carousel("pause");
+    });
+    
+    // Enable Carousel Indicators
+    $(".item1").click(function(){
+        $("#myCarousel").carousel(0);
+    });
+    $(".item2").click(function(){
+        $("#myCarousel").carousel(1);
+    });
+    $(".item3").click(function(){
+        $("#myCarousel").carousel(2);
+    });
+    $(".item4").click(function(){
+        $("#myCarousel").carousel(3);
+    });
+    
+    // Enable Carousel Controls
+    $(".left").click(function(){
+        $("#myCarousel").carousel("prev");
+    });
+    $(".right").click(function(){
+        $("#myCarousel").carousel("next");
+    });
+});
+</script>
+
+
+
+
+<div id="carousel-{{ name }}" class="carousel slide {{ class }}" data-ride="carousel" {{ dataoptions }}>
+    {# Indicators #}
+    <ol class="carousel-indicators">
+        {% for image in images %}
+            {% if loop.first %}{% set active = 'active' %}{% else %}{% set active = '' %}{% endif %}
+            <li data-target="#carousel-{{ name }}" data-slide-to="{{ loop.index }}" class="{{ active }}"></li>
+        {% endfor %}
+    </ol>
+
+
+    {# Wrapper for slides #}
+    <div class="carousel-inner" role="listbox">
+        {% for image in images %}
+            {% if loop.first %}{% set active = 'active' %}{% else %}{% set active = '' %}{% endif %}
+
+                <div class="item {{ active }}">
+
+                    {% setcontent carouselurls = "/carousel/slideshow" %}
+
+                    <a class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}" 
+                    href="{{ carouselurls.url[loop.index-1].title }}"> {# {{ dump(carouselurls) }} #}
+
+
+
+                    <img src="{{ app.paths.files ~ image.filename }}" alt="{{ image.title }}">
+
+
+                    
+
+                    <div class="carousel-caption"><h2><strong>{{ image.title }}</strong></h2>
+
+                        <h3 class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
+                            {{ carouselurls.smparagraph[loop.index-1].title }}</h3> {# {{ dump(carouselurls.smparagraph [0]) }} #}
+
+                    </div>
+                </a>
+
+            </div>
+        {% endfor %}
+    </div>
+
+    {# Controls #}
+    <div class="nav-justified">
+        <a class="left carousel-control" href="#carousel-{{ name }}" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">{{ prev }}</span>
+        </a>
+
+        
+
+
+        <a class="right carousel-control" href="#carousel-{{ name }}" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">{{ next }}</span>
+        </a>
+    </div>
+</div>

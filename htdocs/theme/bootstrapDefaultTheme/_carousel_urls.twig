@@ -1,0 +1,21 @@
+
+
+  				<!-- Sponsor Image loader -->
+ 				{% setcontent carouselurls = "/carousel/slideshow" %}
+
+ 					{% if carouselurls.imagelist|length > 0 %}
+						<div class="row">
+						  <ul class="list-inline">
+						    {% for image in sponsor.imagelist %}
+						    <li class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
+						      <img src="{{ image.filename|thumbnail(400,240) }}" alt="{{ image.title }}">
+
+						      <h5>{{ image.title }}</h5>
+
+						    </li>
+			                
+						    {% endfor %}
+						  </ul>
+						</div>
+					{% endif %}
+					<!-- End of Sponsor Image loader -->

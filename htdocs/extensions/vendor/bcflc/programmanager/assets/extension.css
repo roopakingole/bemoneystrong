@@ -1,0 +1,82 @@
+/* Last name is the honeypot field */
+
+form.register .programName {
+	font-size: large;
+}
+form.register select{
+    font-size: large;
+    width: 100%
+}
+form.register .programName select{
+    font-size: large;
+    width: 33%
+}
+form.register .registration_info select{
+    font-size: large;
+    width: 100%
+}
+
+
+form.register input{
+    width: 40%;
+    min-width: 100%;
+    margin-right: 6px;
+    float: left;
+    border-color: #CCC;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 30px;
+}
+
+form.register  table{
+    width: 100%;
+}
+form.register td{
+    padding-left: 5px;
+    width: 50%;
+}
+form.register .city_info td{
+    padding-left: 5px;
+    width: 33%;
+}
+form.register .registration_info td{
+    padding-left: 5px;
+    width: 33%;
+}
+form.register .message textarea{
+    padding-left: 5px;
+    width: 100%;
+}
+label.form_label_personal.required {
+    color: #CCC;
+    font-size: small;
+    font-weight: lighter;    
+}
+
+form.register .form_button
+{
+    padding-left: 38%;
+}
+form.register .form_button input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 33%;
+    min-width: 33%;  
+    float: inherit; 
+    height: inherit; 
+}
+#editcontent input, #editcontent select, #editcontent textarea {
+    border-radius: 2px;
+    border-color: #CCC;
+    font-size: 15px;
+}

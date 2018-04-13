@@ -1,0 +1,86 @@
+{% include '_header.twig' %}
+
+
+
+    <!-- Header bar -->
+
+<!--
+   <div class="headerphoto">
+        <img src="{{ paths.root }}theme/bootstrapbolttheme/img/slide-03.jpg" width="100%" height="350" />
+        {# the values in the 'app.config.general' array are taken directly from the file app/config/config.yml #}
+    </div>
+<br>
+-->
+
+    <!-- End header -->
+
+<!-- 'I Am' Menu -->
+
+<div class="iAmMenu navbar container">
+
+  <ul class="list-inline nav-justified">
+    {{ menu('i_am', '_i_am_menu.twig') }}
+  </ul>
+
+</div>
+
+<!-- End 'I Am' Menu -->
+<!-- Start Auth -->
+
+
+
+<!-- Carousel -->
+<div class="container">
+
+  {{ carousel('slideshow') }}
+
+</div>
+<!-- End Carousel -->
+
+
+
+<div class="container text-justify">
+
+  <!-- Upcoming Calendar -->
+  <div class="calendar">
+
+    {% include '_calendar2.twig' %}
+
+  </div>
+  <!-- End Upcoming Calendar -->
+
+</div> <!-- container -->
+
+
+
+<!--
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row" style="margin-top: 10px;">
+      	{% setcontent records = "articles/latest/3" allowpaging %}
+      	{% for record in records %}
+        <div class="span4" style="text-align: center;">
+
+        	{% if record.image!="" %}
+          <a href="{{ image(record.image) }}"><img class="img-circle fancybox" src="{{ thumbnail(record.image, 150, 150) }}"></a>
+          {% endif %}
+
+          <h2><a href="{{ record.link }}">{{ record.title }}</a></h2>
+
+          <p>{{ record.excerpt(220) }}</p>
+
+          <p><a class="btn" href="{{ record.link }}">Read More &raquo;</a></p>
+        </div><!-- /.span4 -->
+        {% endfor %}
+        
+      </div><!-- /.row -->
+
+  </div>
+
+  <!-- End Main Content and Sidebar -->
+
+  <hr>
+
+
+{% include '_footer.twig' %}

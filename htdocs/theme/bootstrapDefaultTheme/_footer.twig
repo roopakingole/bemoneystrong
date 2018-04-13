@@ -1,0 +1,69 @@
+      <!-- FOOTER -->
+      <footer style="text-align: center; margin-top: 30px;">
+      <div class="container"><h4><p class="text-center">Sponsors:</p></h4></div>
+
+
+      		<!--  '_sponsors.twig'  -->
+          {% include '_sponsors2.twig' %}
+
+        <p class="text-center" style="margin-right: 10px;"><a href="#">Back to top</a></p>
+
+        <br/>
+        <div class="footer-wrapper">
+        <div class="container">
+        <table style="width:100%">
+          <tr style="text-align:center">
+            <th style="text-align:center; width:25%"> &nbsp </th>
+            <th style="text-align:center; width:25%"> About Us </th>
+            <th style="text-align:center; width:25%"> Social </th>
+            <th style="text-align:center; width:25%"> &nbsp </th>
+          </tr>  
+          <tr>
+            <td class="footer-brand">
+              <!-- <a class="brand" href="{{ paths.root }}">{{ app.config.general.sitename }}<img src="../files/bcflclogo.png"/></a> -->
+              <a class="brand" href="{{ paths.root }}">{{ app.config.general.sitename }}<img src="../files/Logo/logo_full_compress_darkbg.png" height="100px" width="215px"/></a>
+              <p>1531 Thirteenth St, Ste 1100<br>Columbus, IN 47201<br>812-376-3001 </p>
+            </td>
+            <td>
+              <table align=center>
+                {% setcontent ct = 'we-are/overview' %}
+                <tr> <td> <p>  <a href={{ ct.link }}>{{ ct.title}}</a> </p> </td> </tr>
+                {% setcontent ct = '/we-are/coalition-members' %}
+                <tr> <td> <p>  <a href={{ ct.link }}>{{ ct.title}}</a> </p> </td> </tr>
+                {% setcontent ct = '/we-are/mission' %}
+                <tr> <td> <p>  <a href={{ ct.link }}>{{ ct.title}}</a> </p> </td> </tr>
+                {% setcontent ct = '/need-help/need-help' %}
+                <tr> <td> <p>  <a href={{ ct.link }}>{{ ct.title}}</a> </p> </td> </tr>
+                {% setcontent ct = '/page/logo' %}
+                <tr> <td> <p>  <a href={{ ct.link }}>{{ ct.title}}</a> </p> </td> </tr>
+              </table>
+            </td>
+            <td class="footer-social">
+              <table width=100%>
+                <tr>
+                  <td style="width=33%; align=center">
+                    <p><a href="https://www.facebook.com/Financial-Literacy-Coalition-Bartholomew-County-223237491055457/?fref=ts" target="_blank"> <img src="../theme/bootstrapDefaultTheme/img/facebook_48x48.png"/></a> </p>
+                  </td>
+                  <!--<td style="width=33%; align=center">
+                    <p><a href="https://www.facebook.com/Financial-Literacy-Coalition-Bartholomew-County-223237491055457/?fref=ts" target="_blank"> <img src="../theme/bootstrapDefaultTheme/img/twiter_48x48.png"/></a> </p>
+                  </td> 
+                  <td style="width=33%; align=center">
+                    <p> <a href="https://www.facebook.com/Financial-Literacy-Coalition-Bartholomew-County-223237491055457/?fref=ts" target="_blank"> <img src="../theme/bootstrapDefaultTheme/img/googleplus_48x48.png"/></a> </p>
+                  </td> -->
+                  <td style="width=33%; align=center">
+                    <p> <a href="https://www.facebook.com/Financial-Literacy-Coalition-Bartholomew-County-223237491055457/?fref=ts" target="_blank"> <img src="../theme/bootstrapDefaultTheme/img/youtube_48x48.png"/></a> </p>
+                  </td>                  
+                </tr>
+              </table>  
+            </td>        
+            <td>
+              <p style="text-align:right">&copy; 2016 Bartholomew County<br>Financial Literacy Coalition</p>
+              <p style="text-align:right">All Rights Reserved</p>
+            </td>
+          </tr>
+        </table>
+        </div>
+        </div>
+      </footer>
+
+      <!-- End Footer -->

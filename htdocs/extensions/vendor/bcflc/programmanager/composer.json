@@ -1,0 +1,43 @@
+{
+	"name" : "bcflc/programmanager",
+	"description" : "BCFLC Program Manager",
+    "version": "v1.0.0",
+    "version_normalized": "1.0.0.0",
+	"type" : "bolt-extension",
+	"keywords" : [
+		"oauth",
+		"login",
+		"Google",
+		"Facebook",
+		"Twitter",
+		"GitHub"
+	],
+	"require" : {
+		"bolt/bolt" : ">=2.1.0,<3.0.0",
+		"google/apiclient" : "^2.0"
+	},
+	"license" : "GPL-3.0+",
+	"authors" : [{
+			"name" : "Roopak Ingole",
+			"email" : "roopak.ingole@gmail.com"
+		}
+	],
+	"autoload" : {
+		"files" : [
+			"init.php"
+		],
+		"psr-4" : {
+			"Bolt\\Extension\\Bcflc\\ProgramManager\\" : [
+				"",
+				"src/"
+			]
+		},
+		"classmap" : [
+		]
+	},
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "2.0.*-dev"
+		}
+	}
+}

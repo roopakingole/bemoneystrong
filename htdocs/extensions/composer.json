@@ -1,0 +1,40 @@
+{
+    "repositories": {
+        "packagist": false,
+        "bolt": {
+            "type": "composer",
+            "url": "https://extensions.bolt.cm/satis/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "discard-changes": true,
+        "preferred-install": "dist"
+    },
+    "provide": {
+        "bolt/bolt": "2.2.10"
+    },
+    "extra": {
+        "bolt-web-path": ".././"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bolt\\Composer\\": ""
+        }
+    },
+    "scripts": {
+        "post-package-install": "Bolt\\Composer\\ExtensionInstaller::handle",
+        "post-package-update": "Bolt\\Composer\\ExtensionInstaller::handle"
+    },
+    "require": {
+        "bacboslab/menueditor": "^2.2",
+        "bolt/boltforms": "^2.5",
+        "bolt/bootstrap-carousel": "^2.0",
+        "bolt/clientlogin": "dev-master",
+        "bcflc/programmanager": "dev-master",
+        "miguelavaqrod/newsletter": "^1.0",
+        "salidasoftware/boltcontact": "dev-master",
+        "google/apiclient": "^2.0"
+    }
+}

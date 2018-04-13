@@ -1,0 +1,175 @@
+{% block javascripts %}
+    <script>
+        $(function(){
+            $("#form_program").change(function(){
+                var data = {
+                    program_id: $(this).val()
+                };
+
+                $.ajax({
+                    type: 'post',
+                    url: "{{path('get_program_details')}}",
+                    data: data,
+                    success: function(data) {
+                        var $date_selector = $('#form_date');
+
+                        $date_selector.html('<option value="S">Select Date</option>');
+
+                        for (var i=0, total = data.length; i < total; i++) {
+                            $date_selector.append('<option value="' + data[i].date_start + '">' + data[i].date_start + '</option>');
+                        }
+                    }
+                });
+            });
+            $("#form_date").change(function(){
+                var data = {
+                    date_id: $(this).val(),
+                    program_id: $('#form_program').val()
+                };
+
+                $.ajax({
+                    type: 'post',
+                    url: "{{path('get_program_dayslots')}}",
+                    data: data,
+                    success: function(data) {
+                        var $time_selector = $('#form_timeSlot');
+
+                        $time_selector.html('<option value="S">Select Time</option>');
+
+                        for (var i=0, total = data.length; i < total; i++) {
+                            $time_selector.append('<option value="' + data[i].time_start + '-' + data[i].time_end + '">' + data[i].time_start + '-' + data[i].time_end + '</option>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+{% if invalid_form %}
+	{{ invalid_form|raw }}
+{% elseif success %}
+	<div class="alert alert-success">
+		{{ success }}
+	</div>
+{% else %}
+	<form action={{ action }} method="post" class="register">
+		<br>
+		<div class='programName'>
+		    {{ form_label(form.program) }}
+		    {{ form_errors(form.program) }}
+		    {{ form_widget(form.program) }}
+		</div>
+		<hr>
+		<div class='personal_info'>
+		<table>
+			<label>Name<span class="gfield_required">*</span></label>
+			<tr>
+				<td> <span>
+					    {{ form_widget(form.fName) }}
+					    {{ form_label(form.fName,'First', {'label_attr': {'class': 'form_label_personal'}}) }}
+					    {{ form_errors(form.fName) }}
+				</span></td>
+				<td> <span>
+				    {{ form_widget(form.lName) }}
+				    {{ form_label(form.lName,'Last', {'label_attr': {'class': 'form_label_personal'}}) }}
+				    {{ form_errors(form.lName) }}
+				</span> </td>
+			</tr>
+			<tr> <td> <br> </td> <td> <br> </td></tr>
+			<tr>
+				<td> <span>
+				    {{ form_widget(form.gender) }}
+				    {{ form_label(form.gender) }}
+				    {{ form_errors(form.gender) }}
+				</span> </td>
+				<td> <span>
+				    {{ form_errors(form.dob) }}
+				    {{ form_widget(form.dob) }}		
+				    {{ form_label(form.dob,'Date of Birth') }}
+				</span> </td>
+			</tr>
+		</table>
+		</div>
+		<hr>
+		<div class='contact_info'>
+		<table>
+			<tr>
+				<td>
+				    {{ form_widget(form.phone) }}
+				    {{ form_label(form.phone) }}
+				    {{ form_errors(form.phone) }}
+				</td>
+				<td>
+				    {{ form_widget(form.email) }}
+				    {{ form_label(form.email) }}
+				    {{ form_errors(form.email) }}
+				</td>
+			</tr>
+			<tr>
+				<td>
+				    {{ form_widget(form.address1) }}
+				    {{ form_label(form.address1) }}
+				    {{ form_errors(form.address1) }}
+				</td>
+				<td>
+				    {{ form_widget(form.address2) }}
+				    {{ form_label(form.address2) }}
+				    {{ form_errors(form.address2) }}
+				</td>
+			</tr>
+		</table>
+		</div>
+		<div class='city_info'>
+		<table>
+			<tr>
+				<td>
+				    {{ form_widget(form.city) }}
+				    {{ form_label(form.city) }}
+				    {{ form_errors(form.city) }}
+				</td>
+				<td>
+				    {{ form_widget(form.state) }}
+				    {{ form_label(form.state) }}
+				    {{ form_errors(form.state) }}
+				</td>
+				<td>
+				    {{ form_widget(form.zip) }}
+				    {{ form_label(form.zip) }}
+				    {{ form_errors(form.zip) }}
+				</td>
+			</tr>
+		</table>
+		</div>
+		<hr>
+		<div class='registration_info'>
+		    <br>
+			<table>
+				<tr>
+					<td>
+					    {{ form_widget(form.date) }}
+					    {{ form_label(form.date,'Available Dates') }}
+					    {{ form_errors(form.date) }}
+					</td>
+					<td>
+					    {{ form_widget(form.timeSlot) }}
+					    {{ form_label(form.timeSlot,'Available Time') }}
+					    {{ form_errors(form.timeSlot) }}
+					</td>
+				</tr>
+			</table>
+		</div>
+		<hr>
+		<div class='message'>
+		    {{ form_widget(form.message) }}
+		    {{ form_label(form.message) }}
+		    {{ form_errors(form.message) }}
+		</div>
+		{{ form_row(form._token) }}
+		<hr>
+		<div class='form_button'>
+		    <input type="submit" name="submit" align="center"/>
+	    </div>
+	    <br>
+	</form>
+{% endif %}

@@ -1,0 +1,43 @@
+{
+	"name" : "bolt/clientlogin",
+	"description" : "OAuth login for a Bolt site's clients in the frontend",
+	"type" : "bolt-extension",
+	"keywords" : [
+		"oauth",
+		"login",
+		"Google",
+		"Facebook",
+		"Twitter",
+		"GitHub"
+	],
+	"require" : {
+		"bolt/bolt" : ">=2.1.0,<3.0.0"
+	},
+	"license" : "GPL-3.0+",
+	"authors" : [{
+			"name" : "Gawain Lynch",
+			"email" : "gawain.lynch@gmail.com"
+		}
+	],
+	"autoload" : {
+		"files" : [
+			"init.php"
+		],
+		"psr-4" : {
+			"Bolt\\Extension\\Bolt\\ClientLogin\\" : [
+				"",
+				"src/"
+			]
+		},
+		"classmap" : [
+			"lib/Hybrid/Auth.php",
+			"lib/Hybrid/Endpoint.php",
+			"lib/Hybrid/User_Profile.php"
+		]
+	},
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "2.0.*-dev"
+		}
+	}
+}

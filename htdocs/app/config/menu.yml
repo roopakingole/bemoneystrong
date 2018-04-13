@@ -1,0 +1,173 @@
+main:
+  - label: Home
+    path: homepage
+    class: first
+    title: Home
+  - label: 'I Am...'
+    path: /page/i-am/
+    class: caret
+    submenu:
+      - label: 'A Teen'
+        path: /i-am-page/a-teen/
+      - label: 'A College Student'
+        path: /i-am-page/college-student
+        class: menu-item-class
+      - label: Employed
+        path: /i-am-page/employed/
+      - label: 'A Business Owner'
+        path: /i-am-page/business-owner/
+      - label: 'A Couple'
+        path: /i-am-page/a-couple/
+      - label: 'A Parent'
+        path: /i-am-page/a-parent/
+      - label: 'A Home Owner'
+        path: /i-am-page/a-home-owner/
+      - label: 'In Crisis'
+        path: /i-am-page/in-crisis/
+      - label: Retired
+        path: /i-am-page/retired/
+        class: sub-class
+  - label: 'Our Programs'
+    path: /page/programs/
+    class: caret
+    submenu:
+      - label: 'Reality Store'
+        path: /page/reality-store/
+      - label: 'Money Smart Week'
+        link: /page/money-smart-week/
+      - label: 'Free Tax Assistance'
+        link: /page/free-tax-assistance/
+      - label: 'Money Strong'
+        link: /page/money-strong
+        submenu:
+          - label: 'Money Strong Volunteer Description'
+            link: /page/money-strong-volunteer-description
+      - label: 'FAFSA Help'
+        link: /page/fafsa
+      - label: 'Great Piggy Bank Pageant'
+        path: /page/piggy-bank/
+        class: menu-item-class
+  - label: Topics
+    path: /topics/topics/
+    class: caret
+    submenu:
+      - label: Budgeting
+        path: /topics/budgeting
+      - label: 'Building Credit'
+        path: /topics/building-credit
+        submenu:
+          - label: 'What is a Credit Report? And How do I Get one?'
+            link: /topics/credit-report
+          - label: 'The Sections of a Credit Report'
+            link: /topics/sections-credit-report
+          - label: 'What is a FICO Credit Score?'
+            link: /topics/fico-credit-score
+          - label: 'How is a FICO Credit Score Calculated?'
+            link: /topics/fico-credit-score-calculated
+          - label: '4 C''s of Credit'
+            link: /topics/topics/4-cs-credit
+          - label: '4 Actions to Take After Identity Theft'
+            link: /topics/actions-identity-theft
+            class: menu-item-class
+      - label: 'Health Care'
+        link: /topics/health-care
+        submenu:
+          - label: 'Healthy Indiana Plan'
+            link: /topics/healthy-indiana-plan
+      - label: 'Money Management'
+        submenu:
+          - label: 'Pick Best Time to Claim Retirement Benefits'
+            link: /topics/best-time-to-claim-retirement-benefits
+          - label: 'Plug Your Financial Leaks'
+            link: /topics/financial-leaks
+          - label: 'Understand Your Company''s 401(k) Plan'
+            link: /topics/understand-401k
+          - label: 'Tame Clutter of Financial Records'
+            link: /topics/financial-records
+          - label: 'Squeeze More Returns From Your Savings'
+            link: /page/returns-from-savings
+          - label: 'Why Do I Need a Bank Account?'
+            link: /topics/bank-account
+      - label: 'Debt Management'
+        path: /topics/debt-management
+        submenu:
+          - label: 'How to Avoid Credit Card Debt'
+            path: /topics/avoid-credit-card-debt
+      - label: 'Family Finance'
+        link: /topics/family-finance
+        submenu:
+          - label: '6 Money Mistakes Families Make'
+            link: /topics/6-money-mistakes-families-make
+          - label: 'Borrowing for College?'
+            link: /topics/borrowing-for-college
+          - label: 'How to Find Money for College'
+            link: /topics/money-for-college
+  - label: Tools
+    path: /tools/tools/
+    submenu:
+      - label: 'Loan Calculator'
+        path: /tools/loan-calculator/
+      - label: 'Mortgage Calculator'
+        path: /tools/mortgage-calculator/
+  - label: Newsletter
+    path: /newsletter/newsletter
+    submenu:
+      - label: Financial Coaching
+        path: /newsletter/financial-coaching
+      - label: Members
+        path: /newsletter/members
+        class: menu-item-class
+  - label: 'We Are...'
+    path: /we-are/we-are/
+    class: caret
+    submenu:
+      - label: Overview
+        path: /we-are/overview/
+      - label: 'Coalition Members'
+        link: /we-are/coalition-members/
+      - label: Mission
+        path: /we-are/mission/
+        class: menu-item-class
+  - label: 'Contact Us'
+    path: /need-help/need-help
+    class: caret
+    submenu:
+      - label: In Crises, Need Help?
+        path: /need-help/in-crises
+      - label: Want to Volunteer?
+        path: /need-help/want-to-volunteer
+      - label: Inforamation about Event
+        path: /need-help/information-about-event
+      - label: Other
+        path: /need-help/need-help
+        class: menu-item-class
+      - label: Event Registration
+        path: /need-help/volunteer-registration
+i_am:
+  - label: 'A Teen'
+    path: /i-am-page/a-teen/
+    class: 'first teen'
+  - label: 'A College Student'
+    path: /i-am-page/college-student
+    class: student
+  - label: Employed
+    path: /i-am-page/employed/
+    class: employed
+  - label: 'A Business Owner'
+    path: /i-am-page/business-owner/
+    class: business
+  - label: 'A Couple'
+    path: /i-am-page/a-couple/
+    class: couple
+  - label: 'A Parent'
+    path: /i-am-page/a-parent/
+    class: parent
+  - label: 'A Home Owner'
+    path: /i-am-page/a-home-owner/
+    class: homeOwner
+  - label: 'In Crisis'
+    path: /i-am-page/in-crisis/
+    class: crisis
+  - label: Retired
+    path: /i-am-page/retired/
+    class: 'last retired'

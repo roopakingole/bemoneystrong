@@ -1,0 +1,131 @@
+
+
+      <div class="container panel panel-default">
+  			<div class="panel-body">
+  			<span class="glyphicon glyphicon-bookmark label label-info"> PLATINUM</span>
+  			</div>
+
+  				<!-- Sponsor Image loader -->
+ 				{% setcontent sponsor = "/sponsor/platinum" %}
+
+ 					{% if sponsor.imagelist|length > 0 %}
+						<div class="row">
+						  <ul class="list-inline">
+						    {% for image in sponsor.imagelist %}
+						    <li class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
+						      <img src="{{ image.filename|thumbnail(400,240) }}" alt="{{ image.title }}">
+
+						      <h5>{{ image.title }}</h5>
+
+						    </li>
+			                
+						    {% endfor %}
+						  </ul>
+						</div>
+					{% endif %}
+					<!-- End of Sponsor Image loader -->
+
+
+
+					  <!-- Spacer -->
+					  <span class="col-sm-2">
+					  <!-- I AM A 2-COLUMN SPACER -->
+					  </span>
+					  <!-- End of Spacer -->
+
+
+
+					  <!-- Spacer -->
+					  <span class="col-sm-2">
+					  <!-- I AM A 2-COLUMN SPACER -->
+					  </span>
+					  <!-- End of Spacer -->
+
+					<!-- <div class="col-sm-5">Old National Bank</div> -->
+
+
+				</div>
+
+					<div class="container-fluid"><a href="/need-help/need-help/">Want to be a sponsor?</a></div>
+
+
+
+		</div>
+
+    	<div class="container panel panel-default">
+  			<div class="panel-body">
+  			<span class="glyphicon glyphicon-bookmark label label-warning"> GOLD</span>
+
+				<!-- Sponsor Image loader -->
+ 				{% setcontent gold = "/sponsor/gold" %}
+
+ 					{% if gold.imagelist|length > 0 %}
+						<div class="row">
+						  <ul class="list-inline">
+						    {% for image in gold.imagelist %}
+						    <li class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
+						      <img src="{{ image.filename|thumbnail(400,240) }}" alt="{{ image.title }}">
+						      
+						      <h5>{{ image.title }}</h5>
+
+						    </li>
+
+						    {% endfor %}
+						  </ul>
+						</div>
+					{% endif %}
+					<!-- End of Sponsor Image loader -->
+
+					  <!-- Spacer -->
+					  <span class="col-sm-2">
+					  <!-- I AM A 2-COLUMN SPACER -->
+					  </span>
+					  <!-- End of Spacer -->
+
+				</div>
+
+					<div class="container-fluid"><a href="/need-help/need-help/">Want to be a sponsor?</a></div>
+
+
+  			</div>
+		</div>
+
+		<div class="container panel panel-default">
+  			<div class="panel-body">
+  			<span class="glyphicon glyphicon-bookmark label label-default"> SILVER</span>
+
+				<!-- Sponsor Image loader -->
+ 				{% setcontent silver = "/sponsor/silver" %}
+
+ 					{% if silver.imagelist|length > 0 %}
+						<div class="row">
+						  <ul class="list-inline">
+						    {% for image in silver.imagelist %}
+						    <li class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
+						      <img src="{{ image.filename|thumbnail(400,240) }}" alt="{{ image.title }}">
+
+						      <h5>{{ image.title }}</h5>
+
+						    </li>
+
+						    {% endfor %}
+						  </ul>
+						</div>
+					{% endif %}
+					<!-- End of Sponsor Image loader -->
+
+					  <!-- Spacer -->
+					  <span class="col-sm-2">
+					  
+					  </span>
+					  
+
+				</div>
+
+					<div class="container-fluid"><a href="/need-help/need-help/">Want to be a sponsor?</a></div>
+
+
+				<!-- End of Spacer -->
+
+  			</div>
+		</div>

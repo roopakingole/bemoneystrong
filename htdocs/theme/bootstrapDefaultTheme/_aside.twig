@@ -1,0 +1,116 @@
+<!-- Sidebar -->
+
+<aside class="four columns">
+
+<!--
+    <div class="panel">
+        {# The next section attempts to fill the panel in the sidebar with part of the
+           'about'-page, if it exists. First, attempt to fetch a page with slug 'about' #}
+        {% setcontent about = "page/about" %}
+
+        {# check if we have a title. If so, we know we have a page. Otherwise, still
+           print a text, telling us to create the 'about' page. #}
+        {% if about.title is defined %}
+
+            <h5>{{ about.title }}</h5>
+            {{ about.teaser }}
+
+            <a href="{{ about.link }}">Read more &raquo;</a>
+
+        {% else %}
+
+        
+
+           <div id="events-div" class="">
+
+
+            <!--{% setcontent asidetitle = "/aside/were-here-to-help" %}
+
+            <h5>{{ asidetitle.title }}</h4>
+
+            <p>{{ asidetitle.teaser }}</p> -->
+<!--            {% setcontent asideurls = "/aside" %} 
+            <!-- {{ dump(asideurls) }} -->
+<!--            {% for ct in asideurls %}
+              {# {{ dump(ct.slug) }} #}
+              {# {{ dump(ct.values.teaser) }} #}
+
+              {% setcontent asidetitle = ct %}
+
+              <a href="/aside/{{ ct.slug }}"><h4><span class="glyphicon glyphicon-bullhorn">&nbsp{{ ct.title }}</span></h5></a>
+
+              <p>{{ ct.teaser }}</p>        
+            {% endfor %}
+            <!--
+            <iframe id="" src="http://moneywisebc.org/aside/were-here-to-help/" width="100%" height="240px">
+            <p>Your browser does not support iframes.</p>
+            </iframe>
+            -->
+<!--          </div>
+           
+        {% endif %}
+
+    </div>
+-->
+    {# The next section iterates over all of the contenttypes, and prints a list
+       of the five latest records of each of them. The 'magic' happens in the
+       setcontent tag.. ct.slug ~ "/latest/5" contatenates the slug ot the
+       contenttype with /latest/5, so it becomes something like "pages/latest/5".
+       The 'else' in the inner for-loop is only used if there are no 'records',
+       so we can use it to print a helpful message.
+       Lastly, "{{ paths.root }}{{ct.slug}}" will output something like '/pages',
+       effectively creating a working link to that contenttpye's listing page.#}
+
+
+    {#  {{ dump(config.get('contenttypes')) }} #}
+    {# {% for ct in app.config.contenttypes %} #}
+
+
+
+        <h4>Recent Articles</h4>
+        {% setcontent records = "topics/latest/2" %}
+            {% for record in records %}
+                  <a href="{{ record.link }}"><h5><span class="glyphicon glyphicon-bullhorn">&nbsp{{ record.title }}</span></h5></a>
+                  <p>{{ record.teaser }}</p> 
+            {% endfor %}
+        <!--<p><a href="{{ paths.root }}{{ct.slug}}">{{ ct.name }} overview &raquo;</a></p> -->
+
+        {% setcontent records = "events/latest/2" %}
+            {% for record in records %}
+                  <a href="{{ record.link }}"><h5><span class="glyphicon glyphicon-bullhorn">&nbsp{{ record.title }}</span></h5></a>
+                  <p>{{ record.teaser }}</p> 
+            {% endfor %}
+        {% setcontent records = "newsletter/latest/2" %}
+            {% for record in records %}
+                  <a href="{{ record.link }}"><h5><span class="glyphicon glyphicon-bullhorn">&nbsp{{ record.title }}</span></h5></a>
+                  <p>{{ record.teaser }}</p> 
+            {% endfor %}
+        {% setcontent records = "pages/latest/2" %}
+            {% for record in records %}
+                  <a href="{{ record.link }}"><h5><span class="glyphicon glyphicon-bullhorn">&nbsp{{ record.title }}</span></h5></a>
+                  <p>{{ record.teaser }}</p> 
+            {% endfor %}
+
+
+
+    <!--{% for ct in config.get('contenttypes') %}
+
+        {% setcontent records = ct.slug ~ "/latest/5" %}
+
+        <h5>Recent {{ ct.name }}</h5>
+        <ul>
+            {% for record in records %}
+                <li><a href="{{ record.link }}">{{ record.title }}</a></li>
+            {% else %}
+                <li>No recent {{ ct.name }}.</li>
+            {% endfor %}
+        </ul>
+        <p><a href="{{ paths.root }}{{ct.slug}}">{{ ct.name }} overview &raquo;</a></p>
+
+
+    {% endfor %} -->
+
+
+</aside>
+
+<!-- End Sidebar -->

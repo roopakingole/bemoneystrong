@@ -1,0 +1,25 @@
+{% for item in menu %}
+
+
+<li class="iAm {% if item.submenu is defined %}dropdown{% else %} index-{{ loop.index }}{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %}{% if item|current %} {% endif %}{% endif %}">
+        <a href="{% if item.submenu is defined %}#{% else %}{{ item.link }}{% endif %}" {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}
+           class='{% if item.submenu is defined %} {% else %}{% if item.class is defined %}{{item.class}}{% endif %}{% endif %}' {% if item.submenu is defined %} {% endif %}>
+            {{item.label}}
+
+        </a>
+
+        {% if item.submenu is defined %}
+            <ul class="dropdown-menu">
+                {% for item in item.submenu %}
+                    <li>
+                        <a href="{{ item.link }}" {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}>
+                            {{item.label}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+
+
+{% endfor %}

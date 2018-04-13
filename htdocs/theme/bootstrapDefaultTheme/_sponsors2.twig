@@ -1,0 +1,76 @@
+
+<div class="sponsor" >
+      <div class="container panel panel-default" style="border-color:transparent">
+  			<!--<div class="panel-body">
+  			<span class="glyphicon glyphicon-bookmark label label-info"> PLATINUM</span>
+  			</div>-->
+			<div class="row">
+			  <ul class="list-inline">
+  				<!-- Sponsor Image loader -->
+ 				{% setcontent sponsor = "/sponsor/platinum" %}
+
+ 					{% if sponsor.imagelist|length > 0 %}
+
+						    {% for image in sponsor.imagelist %}
+						    <li class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
+							<div id="logoimage"> 
+						      <a href="{{ image.title }}" target="_blank">
+						      	<img src="{{ image.filename|thumbnail(400,240) }}" alt="{{ image.title }}">
+						      </a>
+						    </div>
+						    <span class="glyphicon glyphicon-bookmark label label-info">PLATINUM</span>
+    						<!-- <div id="badgeimage"> <img src="{{ paths.theme }}/img/Platinum.png"> </div> -->
+						      <!-- <h5>{{ image.title }}</h5> -->
+
+						    </li>
+			                
+						    {% endfor %}
+					{% endif %}
+					<!-- End of Sponsor Image loader -->
+				<!-- Sponsor Image loader -->
+ 				{% setcontent gold = "/sponsor/gold" %}
+
+ 					{% if gold.imagelist|length > 0 %}
+						    {% for image in gold.imagelist %}
+						    <li class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
+						    <div id="logoimage"> 
+						      <a href="{{ image.title }}" target="_blank">
+						      	<img src="{{ image.filename|thumbnail(400,240) }}" alt="{{ image.title }}">
+						      </a>
+						    </div>
+						      <span class="glyphicon glyphicon-bookmark label label-warning">GOLD</span>
+						      <!-- <h5>{{ image.title }}</h5> -->
+
+						    </li>
+
+						    {% endfor %}
+					{% endif %}
+					<!-- End of Sponsor Image loader -->
+				<!-- Sponsor Image loader -->
+ 				{% setcontent silver = "/sponsor/silver" %}
+
+ 					{% if silver.imagelist|length > 0 %}
+						    {% for image in silver.imagelist %}
+						    <li class="{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
+						    <div id="logoimage"> 
+						      <a href="{{ image.title }}" target="_blank">
+						      	<img src="{{ image.filename|thumbnail(400,240) }}" alt="{{ image.title }}">
+						      </a>
+						    </div>
+						    <span class="glyphicon glyphicon-bookmark label label-default">SILVER</span>
+						      <!-- <h5>{{ image.title }}</h5> -->
+
+						    </li>
+
+						    {% endfor %}
+					{% endif %}
+					<!-- End of Sponsor Image loader -->
+
+				</div>
+			  </ul>
+			</div>
+
+			<div class="container-fluid"><a href="/need-help/need-help/">Want to be a sponsor?</a></div>
+
+		</div>
+</div>

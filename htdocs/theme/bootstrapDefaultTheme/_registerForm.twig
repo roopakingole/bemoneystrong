@@ -1,0 +1,64 @@
+{% if invalid_form %}
+	{{ invalid_form|raw }}
+{% elseif success %}
+	<div class="alert alert-success">
+		{{ success }}
+	</div>
+{% else %}
+	<form action={{submitUrl()}} method="post" class="contact">
+		<div class='programName'>
+		    {{ form_label(getForm().program) }}
+		    {{ form_errors(getForm().program) }}
+		    {{ form_widget(getForm().program) }}
+		</div>
+		<div class='name'>
+		    {{ form_label(getForm().name) }}
+		    {{ form_errors(getForm().name) }}
+		    {{ form_widget(getForm().name) }}
+		</div>
+
+		<div class='email'>
+		    {{ form_label(getForm().email) }}
+		    {{ form_errors(getForm().email) }}
+		    {{ form_widget(getForm().email) }}
+		</div>
+
+		{# honeypot #}
+	    <div class='last_name'>
+		    {{ form_label(getForm().last_name) }}
+		    {{ form_errors(getForm().last_name) }}
+		    {{ form_widget(getForm().last_name) }}
+		</div>
+	    
+	    <div class='subject'>
+		    {{ form_label(getForm().subject) }}
+		    {{ form_errors(getForm().subject) }}
+		    {{ form_widget(getForm().subject, {'value' : value } ) }}
+		</div>
+
+		<div class='message'>
+		    {{ form_label(getForm().message) }}
+		    {{ form_errors(getForm().message) }}
+		    {{ form_widget(getForm().message) }}
+		</div>
+
+		<div class='isAttending'>
+		    {{ form_label(getForm().isAttending) }}
+		    {{ form_errors(getForm().isAttending) }}
+		    {{ form_widget(getForm().isAttending) }}
+		</div>
+		<div class='choiceDate'>
+		    {{ form_label(getForm().date) }}
+		    {{ form_errors(getForm().date) }}
+		    {{ form_widget(getForm().date) }}
+		</div>
+		<div class='choiceStartTime'>
+		    {{ form_label(getForm().startTime) }}
+		    {{ form_errors(getForm().startTime) }}
+		    {{ form_widget(getForm().startTime) }}
+		</div>
+		{{ form_row(getForm()._token) }}
+
+	    <input type="submit" name="submit" />
+	</form>
+{% endif %}

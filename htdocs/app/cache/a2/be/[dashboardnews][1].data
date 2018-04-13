@@ -1,0 +1,6 @@
+1477056638
+a:1:{s:11:"information";O:8:"stdClass":11:{s:2:"id";s:2:"50";s:4:"slug";s:17:"bolt-310-released";s:11:"datecreated";s:19:"2016-08-23 20:59:21";s:11:"datechanged";s:19:"2016-08-23 20:59:21";s:8:"username";s:0:"";s:6:"status";s:9:"published";s:5:"title";s:20:"Bolt 3.1.0 released.";s:6:"teaser";s:535:"<p>Today we've released Bolt 3.1.0. This release further solidifies our Bolt 3.0 branch. As such, it contains a modest amount of new features, but also a lot of fixes and 'under the hood'-improvements.<br>
+
+Besides that, we've been working on the documentation and the code for extensions. We've also updated our <a href="https://github.com/bolt/bolt/wiki/Bolt-3.x-Roadmap">Roadmap</a> with the features we're currently working on. 
+</p>
+<p>Check the site for <a href="https://bolt.cm/newsitem/bolt-3-1-0-released">details</a>.</p>";s:4:"link";s:44:"https://bolt.cm/newsitem/bolt-3-1-0-released";s:4:"type";s:4:"news";s:14:"target_version";s:0:"";}}

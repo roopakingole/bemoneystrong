@@ -1,0 +1,12 @@
+
+table_name: bcfl_susbcribers
+
+newsletter_field: bcfl_newsletter_email
+
+email_from: info@bcfl.com
+email_from_name: Barthomew County Financial Literacy
+
+subject: Newsletter
+body: Please follow the link to verify your email.
+link: Click Here
+

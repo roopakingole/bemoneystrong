@@ -1,0 +1,23 @@
+## An example carousel definition that would be called in your template with 
+##   {{ carousel('my_carousel_name') }}
+##
+## Only carousel name and the 'content' parameter are required, everything else 
+## is optional
+##
+
+slideshow:
+  content: carousel/1  # The record (contentype/record) that contains this carousel's images
+  field: images        # Name of the field in the defined contenttype
+  field: paragraph 
+  field: url
+#  random: true         # Randomise the order of images
+  count: 5            # Limit the number of pictures selected from the record
+  class: carousel slide      # The HTML class to add to the carousel element 
+  text:                #
+    next: Next         # Accessibility text for 'Next' button
+    prev: Previous     # Accessibility text for 'Previous' button
+  options:             #
+    interval: 5500     # The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.
+#    pause: hover       # Pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.
+    wrap: true         # Whether the carousel should cycle continuously or have hard stops.
+#    keyboard: true     # Whether the carousel should react to keyboard events.
